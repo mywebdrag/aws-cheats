@@ -1,0 +1,16 @@
+
+aws kms encrypt \
+    --key-id <ID> \
+    --profile <profile> \
+    --region <region> \
+    --plaintext fileb://mytxt.txt \
+    --output text \
+    --query CiphertextBlob | base64  \
+    --decode > mytxt.txt.encrypted
+
+
+aws kms decrypt \
+    --ciphertext-blob fileb://mytxt.txt.encrypted \
+    --output text \
+    --query Plaintext | base64 
+    --decode
