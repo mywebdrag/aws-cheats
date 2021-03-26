@@ -1,16 +1,19 @@
 
 aws kms encrypt \
-    --key-id <ID> \
+    --key-id <id> \
     --profile <profile> \
     --region <region> \
-    --plaintext fileb://mytxt.txt \
+    --plaintext fileb://<location> \
     --output text \
     --query CiphertextBlob | base64  \
-    --decode > mytxt.txt.encrypted
+    --decode > <xx.encrypted>
 
 
 aws kms decrypt \
-    --ciphertext-blob fileb://mytxt.txt.encrypted \
+    --key-id <id> \
+    --profile <profile> \
+    --region <region> \
+    --ciphertext-blob fileb://<location> \
     --output text \
-    --query Plaintext | base64 
+    --query Plaintext | base64 \
     --decode
