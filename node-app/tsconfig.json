@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "esModuleInterop": true,
+      "target": "es6",
+      "moduleResolution": "node",
+      "sourceMap": true,
+      "outDir": "./dist/",
+      "allowJs": true,
+      "types": ["reflect-metadata"],
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "lib": ["es6"]
+    },
+    "include": [
+        "src/**/*", "src/security/kms/kms.service.ts", 
+    ],
+    "lib": ["es2015"]
+  }
